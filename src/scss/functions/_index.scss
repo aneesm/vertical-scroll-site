@@ -1,0 +1,75 @@
+/**
+  FUNCTIONS
+**/
+
+/* stylelint-disable */
+
+// ======================================
+// String Replace
+// ======================================
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// ======================================
+// Strip Units
+//
+// Removes units (usually 'px', 'rem' or 'em')
+// from a value passed in and returns it as
+// a pure integer
+// ======================================
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+// ======================================
+// Px-To-Rem
+//
+// Converts a pixel value to rems
+// @param {*} $px - either number or string
+// @return {*} - value in rems, with $font-size-default as base
+// ======================================
+@function px-to-rem($px) {
+  @return ( strip-units($px) / strip-units($font-size-default) ) * 1rem;
+}
+
+// =========================================
+// Map Deep Get
+//
+// get data from multi-level maps
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Key chain
+// @return {*} - Desired value
+// =========================================
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+// =========================================
+// Which Psudeo
+//
+// returns before or after based on var input
+// @param {String} $ypos - either "left" or "right"
+// @return {*} - "before" for "left"; "after" for "right"
+// =========================================
+@function which-psuedo($ypos) {
+  @if $ypos == "left" {
+    @return "before";
+  } @else {
+    @return "after";
+  }
+
+}
+
+/* stylelint-enable */

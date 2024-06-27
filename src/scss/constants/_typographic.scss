@@ -1,0 +1,231 @@
+/**
+  TYPOGRAPHIC
+  global typocraphic constants
+**/
+// font families
+
+$roboto-mono: 'Roboto Mono', sans-serif;
+$chivo: 'Chivo', serif;
+
+// weights
+$font-thinnest: 100;
+$font-thinner: 200;
+$font-thin: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semi-bold: 600; // semi
+$font-bold: 700; // bold
+$font-bolder: 800; // bolder
+$font-ex-bold: 900; // extra bold
+
+%a {
+  font-family: $chivo;
+  font-size: inherit;
+  color: inherit;
+}
+
+%p {
+  @include font(36, 42);
+
+  @include margin(0 null null);
+
+  font-family: $chivo;
+  font-weight: $font-normal;
+
+  &:not(:last-child) {
+    @include margin(null null 25px);
+  }
+}
+
+%h1 {
+  @include highlight;
+  @include font(64, 72);
+  @include margin(null null 30px);
+
+  font-family: $chivo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-bold;
+
+  @include grid-media($lg) {
+    @include font(108, 142);
+  }
+}
+
+%h2 {
+  @include font(32, 48);
+  @include margin(null null 30px);
+
+  font-family: $chivo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-semi-bold;
+
+  @include grid-media($md) {
+    @include font(48, 60);
+  }
+}
+
+%h3 {
+  @include font(28, 34);
+  @include margin(null null 30px);
+
+  color: $white;
+  font-family: $chivo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-medium;
+}
+
+%h4 {
+  @include font(22, 24);
+  @include margin(null null 20px);
+
+  color: $white;
+  font-family: $chivo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-thin;
+}
+
+%h5 {
+  @include font(16, 24);
+  @include margin(null null 20px);
+
+  color: $white;
+  font-family: $chivo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-thin;
+}
+
+%body {
+  @include font(36, 42);
+
+  font-family: $chivo;
+  font-weight: $font-normal;
+}
+
+@mixin a($color: $black) {
+  color: $color;
+
+  @extend %a;
+}
+
+@mixin p($color: $black) {
+  color: $color;
+
+  @extend %p;
+}
+
+@mixin h1($color: $black) {
+  color: $color;
+
+  @extend %h1;
+}
+
+@mixin h2($color: $black) {
+  color: $color;
+
+  @extend %h2;
+}
+
+@mixin h3($color: $black) {
+  color: $color;
+
+  @extend %h3;
+}
+
+@mixin h4($color: $black) {
+  color: $color;
+
+  @extend %h4;
+}
+
+@mixin h5($color: $black) {
+  color: $color;
+
+  @extend %h5;
+}
+
+@mixin body-copy($color: $black) {
+  color: $color;
+
+  @extend %body;
+}
+
+@mixin center {
+  text-align: center;
+}
+
+.center {
+  @include center;
+}
+
+/* Heading 1 */
+h1 {
+  @include h1;
+}
+
+/* Heading 2 */
+h2 {
+  @include h2;
+  margin-bottom: 30px;
+}
+
+/* Heading 3 */
+h3 {
+  @include h3;
+}
+
+/* Heading 4 */
+h4 {
+  @include h4;
+}
+
+/* Heading 5 */
+h5 {
+  @include h5;
+}
+
+/*Button Link*/
+a {
+  @include a;
+  &.link {
+    display: inline;
+    max-width: 500px;
+    text-decoration: underline;
+    font-weight: $font-bold;
+    &::after {
+      content: '';
+      display: inline-block;
+      background: url('./assets/img/link-icon.svg') center center/contain
+        no-repeat;
+      position: relative;
+      top: 5px;
+      width: 57px;
+      height: 55px;
+      margin-left: 20px;
+    }
+  }
+  &.link--large {
+    font-family: $chivo;
+    @include grid-media($lg) {
+      @include font(108, 142);
+    }
+  }
+}
+
+/*Paragraph*/
+p {
+  @include p;
+}
+
+body {
+  @include body-copy;
+}
+
+strong {
+  font-family: $chivo;
+  font-weight: $font-bold;
+}

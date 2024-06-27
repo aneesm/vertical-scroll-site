@@ -1,0 +1,37 @@
+/**
+  BREAKPOINTS
+  breakpoint constants
+**/
+
+// Mobile
+$xs-breakpoint: 576px;
+$xs: (media: $xs-breakpoint);
+
+// Tablet
+$sm-breakpoint: 768px;
+$sm: (media: $sm-breakpoint);
+
+// Tablet Max
+$sm-max-breakpoint: 'only screen and (max-width: 1023.999px)';
+$sm-max: (media: $sm-max-breakpoint);
+
+// Desktop
+$md-breakpoint: 1024px;
+$md: (media: $md-breakpoint);
+
+// Desktop Max
+$md-max-breakpoint: 'only screen and (min-width: 1024px) and (max-width: 1199px)';
+$md-max: (media: $md-max-breakpoint);
+
+// Large Desktop
+$lg-breakpoint: 1200px;
+$lg: (media: $lg-breakpoint);
+
+// Extra Large Desktop
+$xl-breakpoint: 1440px;
+$xl: (media: $xl-breakpoint);
+
+// Grids
+$neat-grid: (columns: 12, gutter: 15px);
+$no-gutter: (gutter: 0);
+$columnar-gutter: (gutter: 120px);

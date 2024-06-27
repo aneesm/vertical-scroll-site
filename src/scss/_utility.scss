@@ -1,0 +1,43 @@
+/**
+* Utility classes
+*/
+
+/**
+* Wordpress image alignment
+*/
+.alignright {
+  float: none;
+
+  @media screen and (min-width: '#{$sm-breakpoint}') {
+    float: right;
+  }
+}
+
+.alignleft {
+  float: none;
+
+  @media screen and (min-width: '#{$sm-breakpoint}') {
+    float: left;
+  }
+}
+
+.aligncenter {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.show-desktop-lg {
+  display: none !important;
+
+  @include grid-media($lg) {
+    display: flex !important;
+  }
+}
+
+.show-mobile {
+  display: block;
+
+  @include grid-media($lg) {
+    display: none;
+  }
+}

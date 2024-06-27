@@ -1,0 +1,47 @@
+/*!
+Theme Name: Front end Test
+Theme URI: http://frontendtest.com
+Author: Anees
+Description: A theme for Front end Test site
+Version: 1.0
+*/
+
+// Animate
+// *********************
+@import '../../node_modules/animate.css/animate.css';
+
+// Bourbon
+// =====================
+@import '../../node_modules/bourbon/core/bourbon';
+@import '../../node_modules/bourbon-neat/core/neat';
+
+// Reset Styles
+// ======================
+@import 'base/reset';
+
+// General Settings
+// =====================
+@import 'mixins/index';
+@import 'constants/index';
+@import 'functions/index';
+
+// Other Vendor Styles
+// ======================
+@import '../../node_modules/@splidejs/splide/dist/css/splide.min.css';
+@import '../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
+@import '../../node_modules/@splidejs/splide-extension-video/dist/css/splide-extension-video.min.css';
+
+// Utility
+// ======================
+@import 'utility';
+
+// Site Styles
+// ======================
+@import 'base/icons';
+@import 'base/layout';
+
+// Components
+// ======================
+@import 'components/header';
+@import 'components/button';
+@import 'components/slider';

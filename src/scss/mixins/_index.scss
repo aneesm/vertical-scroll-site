@@ -1,0 +1,203 @@
+/**
+  MIXINS
+**/
+
+// ======================================
+// Vertical Align
+// ======================================
+
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// ======================================
+// Horizontal Align
+// ======================================
+
+@mixin horizontal-align {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+@mixin vertical-horizontal-align {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// ======================================
+// Visually Hidden
+//
+// Visually hide the element from the
+// screen but still have it accessible
+// via screenreaders
+//
+// ======================================
+@mixin isVisuallyHidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// ======================================
+// Ellipsis
+// ======================================
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ======================================
+// IE MEDIA QUERY
+// ======================================
+
+@mixin ieonly() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+// ======================================
+// Font Size, Line Height and Letter Spacing
+// ======================================
+@mixin font($size, $height) {
+  font-size: $size + px;
+  line-height: $height + px;
+}
+
+/* Mixin for the Wrapper
+of grid column.
+
+This mixin should be used inside the
+wrapper class of the columns
+*/
+@mixin flex-gridWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin content-padd {
+  padding: 80px 0px;
+
+  @include grid-media($sm) {
+    padding: 150px 0px;
+  }
+
+  @include grid-media($md) {
+    padding: 200px 0px;
+  }
+}
+
+@mixin highlight {
+  span {
+    background: linear-gradient(
+      90deg,
+      #232428 2.54%,
+      #6f4c0a 50%,
+      #cbaa6b 97.46%
+    );
+    line-height: 1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@mixin vcenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin line-number-limitation($line-number) {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-number;
+}
+
+@mixin responsive-padding-image($height: 500, $width: 500) {
+  position: relative;
+  padding-top: calc(#{$height} / #{$width} * 100%);
+  width: 100%;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+  }
+}
+
+@mixin img-scale-default($scale, $transition-time, $transition-ease) {
+  transform: scale($scale);
+  transition: transform $transition-time $transition-ease;
+}
+
+//Aspect Ratio
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+
+  > .content {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+// ul/ol bullet mixin
+@mixin common-list {
+  list-style: auto;
+  margin: 0 0 0 10px;
+  padding: 0;
+  > li {
+    &::marker {
+      color: #cbaa6b;
+    }
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+}
+
+@mixin ul-list {
+  li::marker {
+    content: '\25CF';
+  }
+}
+
+@mixin ol-list {
+  margin-left: 16px;
+  li::marker {
+    content: counter(list-item) + '.';
+    font: 400 16px/24px $chivo;
+  }
+}
+
+@mixin before-after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+}

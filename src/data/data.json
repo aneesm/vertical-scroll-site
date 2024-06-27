@@ -1,0 +1,27 @@
+{
+  "logoPath": "./assets/img/logo.svg",
+  "slides": [
+    {
+      "title": "Lorem ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur doloremque labore iusto vitae.",
+      "video": "./src/videos/video.mp4"
+    },
+    {
+      "title": "Sit amet consectetur adipisicing",
+      "description": "Slide 2 Description",
+      "background": {
+        "large": "./assets/img/img-1920x1200.webp",
+        "medium": "./assets/img/img-1280x800.webp",
+        "small": "./assets/img/img-800x368.webp"
+      },
+      "nestedSlides": [
+        "Nested Slide 1",
+        "Nested Slide 2",
+        "Nested Slide 3",
+        "Nested Slide 4",
+        "Nested Slide 5",
+        "Nested Slide 6"
+      ]
+    }
+  ]
+}

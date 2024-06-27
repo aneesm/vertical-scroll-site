@@ -1,0 +1,85 @@
+/**
+* Site-wide layout styling
+*/
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body {
+  background-color: $white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+section {
+  position: relative;
+  width: 100%;
+
+  @include grid-container;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.container {
+  @include padding(null 30px);
+  @include margin(null auto);
+  width: 100%;
+
+  @include grid-media($md) {
+    @include margin(null auto);
+
+    position: relative;
+    max-width: $container-width;
+  }
+}
+
+// fix for input line-height issues on Safari
+input::-webkit-input-placeholder {
+  line-height: normal !important;
+}
+
+.content-section {
+  padding-bottom: 40px;
+
+  @include grid-media($md) {
+    padding-bottom: 70px;
+  }
+
+  ol,
+  ul {
+    @include common-list;
+  }
+
+  ul {
+    @include ul-list;
+  }
+
+  ol {
+    @include ol-list;
+  }
+}
+
+// When admin bar is visible
+body.admin-bar {
+  @include grid-media($md) {
+    padding-top: 89px;
+  }
+}

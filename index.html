@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Home : Front End Test</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo"><img src="./assets/img/logo.svg" alt=""></a>
+    </div>
+  </header>
+
+  <section class="slider">
+    <div class="splide main-slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide custom-slide--one">
+            <div class="splide__content">
+              <h2 class="splide__content-title animate-title">content loaded from data</h2>
+              <p class="splide__content-desc animate-desc">content loaded from data</p>
+            </div>
+          </li>
+          <li class="splide__slide custom-slide--two">
+            <picture class="slider__background">
+              <source media="(min-width:1200px)" srcset="">
+              <source media="(min-width:768px)" srcset="">
+              <img src="" alt="Slider Background">
+            </picture>
+
+            <!-- Nested Horizontal Slider -->
+            <div class="slider__wrapper">
+              <h2 class="splide__content-subtitle animate-title">content loaded from data</h2>
+              <div class="splide nested-slider">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">Nested Slide 1</li>
+                    <li class="splide__slide">Nested Slide 2</li>
+                    <li class="splide__slide">Nested Slide 3</li>
+                    <li class="splide__slide">Nested Slide 4</li>
+                    <li class="splide__slide">Nested Slide 5</li>
+                    <li class="splide__slide">Nested Slide 6</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
